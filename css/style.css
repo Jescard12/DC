@@ -331,7 +331,81 @@ img{max-width:100%; display:block;}
 .footer-col a{color:var(--gold); font-weight:700; font-size:.88rem;}
 .footer-bottom{text-align:center; color:#6f8894; font-size:.8rem; margin-top:50px;}
 
-/* ============ SCROLL REVEAL ============ */
+/* ============ TEAM ============ */
+.team{padding:90px 0; background:var(--white);}
+.team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:2.5em;}
+.team-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:2em 1.8em;
+  text-align:center;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.team-card:hover{transform:translateY(-4px); box-shadow:var(--shadow);}
+.team-avatar{
+  width:64px; height:64px; margin:0 auto .8em;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:700; font-size:1.2rem;
+  color:#fff;
+}
+.team-avatar--blue{background:linear-gradient(135deg, var(--blue), var(--blue-deep));}
+.team-avatar--gold{background:linear-gradient(135deg, var(--gold), var(--gold-deep));}
+.team-role{color:var(--blue-deep); font-weight:700; font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; margin-bottom:.8em;}
+.team-card p em{color:#8a7248; font-style:italic;}
+
+/* ============ TECHNOLOGY ============ */
+.tech{padding:90px 0; background:linear-gradient(160deg, var(--tint) 0%, var(--paper) 100%);}
+.tech-sub{max-width:640px; margin:0 auto 2.5em; text-align:center; color:#4a6273;}
+.tech-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+.tech-card{
+  background:var(--white);
+  border-radius:18px;
+  padding:1.8em 1.4em;
+  text-align:center;
+  border-top:4px solid var(--blue);
+  box-shadow:var(--shadow);
+}
+.tech-card:nth-child(even){border-top-color:var(--gold);}
+.tech-icon{font-size:1.9rem; display:block; margin-bottom:.5em;}
+.tech-card h3{font-size:1.02rem; margin:0 0 .4em;}
+.tech-card p{font-size:.86rem; color:#4a6273; margin:0;}
+
+/* ============ DOCTOR-CHOICE MODAL ============ */
+.doctor-modal{position:fixed; inset:0; z-index:300; display:flex; align-items:center; justify-content:center; padding:20px;}
+.doctor-modal[hidden]{display:none;}
+.doctor-modal-backdrop{position:absolute; inset:0; background:rgba(20,50,74,0.55); backdrop-filter:blur(3px);}
+.doctor-modal-panel{
+  position:relative; z-index:1;
+  background:var(--white);
+  border-radius:24px;
+  padding:2.2em 2em;
+  max-width:400px; width:100%;
+  box-shadow:0 30px 60px rgba(0,0,0,0.35);
+  animation:heroRise .25s ease both;
+}
+.doctor-modal-close{
+  position:absolute; top:16px; right:16px;
+  background:none; border:0; font-size:1.1rem; color:#7a8e9a; cursor:pointer;
+}
+.doctor-modal-panel h3{font-size:1.2rem; margin-bottom:1em;}
+.doctor-modal-options{display:flex; flex-direction:column; gap:10px;}
+.doctor-option{
+  padding:.85em 1em;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:var(--tint);
+  font-weight:700;
+  font-size:.95rem;
+  color:var(--ink);
+  cursor:pointer;
+  text-align:left;
+  transition:transform .15s ease, background .15s ease;
+}
+.doctor-option:hover{transform:translateX(3px); background:rgba(45,147,184,0.16);}
+.doctor-option--ghost{background:transparent; color:#5c7383; font-weight:600;}
+.doctor-option--ghost:hover{background:var(--paper);}
 .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
 .reveal.is-visible{opacity:1; transform:translateY(0);}
 
@@ -341,6 +415,8 @@ img{max-width:100%; display:block;}
   .clinic-grid--reverse .clinic-book{order:2;}
   .clinic-grid--reverse .clinic-info{order:1;}
   .services-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid{grid-template-columns:1fr;}
+  .tech-grid{grid-template-columns:repeat(2,1fr);}
   .reviews-grid{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr; gap:30px;}
 }
@@ -357,6 +433,7 @@ img{max-width:100%; display:block;}
 }
 @media (max-width: 560px){
   .services-grid{grid-template-columns:1fr;}
+  .tech-grid{grid-template-columns:1fr;}
   .book-row{grid-template-columns:1fr;}
   .hero-split{flex-direction:column;}
   .hero-divider{transform:rotate(90deg);}
