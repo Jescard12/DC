@@ -3,10 +3,9 @@
 // ==============================================
 
 // --- WhatsApp numbers per location (E.164, no + or spaces) ---
-// IMPORTANT: replace CELINE (Bikfaya) number below once you have it.
 const WHATSAPP_NUMBERS = {
   dany: '96181835995',   // Byblos location
-  celine: '96100000000'  // <-- PLACEHOLDER: replace with Bikfaya location's real WhatsApp number
+  celine: '96170949739'  // Bikfaya location
 };
 
 const LOCATION_LABELS = {
