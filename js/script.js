@@ -5,7 +5,7 @@
 // --- WhatsApp numbers per location (E.164, no + or spaces) ---
 const WHATSAPP_NUMBERS = {
   dany: '96181835995',   // Byblos location
-  celine: '96170949739'  // Bikfaya location
+  celine: '96176949739'  // Bikfaya location
 };
 
 const LOCATION_LABELS = {
@@ -80,6 +80,10 @@ let modalLocationKey = null;
 function openDoctorModal(locationKey) {
   modalLocationKey = locationKey;
   doctorModalLocation.textContent = `${LOCATION_LABELS[locationKey]} Location`;
+  document.querySelectorAll('.doctor-option').forEach(btn => {
+    const restrictedTo = btn.dataset.clinic;
+    btn.style.display = (!restrictedTo || restrictedTo === locationKey) ? '' : 'none';
+  });
   doctorModal.hidden = false;
   document.body.style.overflow = 'hidden';
 }
